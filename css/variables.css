@@ -1,0 +1,47 @@
+:root {
+  /* Colors */
+  --midnight: #050507;
+  --obsidian: #101014;
+  --blood: #8B0000;
+  --crimson: #D10F2F;
+  --pumpkin: #FF7518;
+  --ghost: #F2F0F5;
+  --purple: #6D28D9;
+  --fog: #777783;
+
+  /* Typography */
+  --font-horror: 'Creepster', 'Cinzel Decorative', cursive;
+  --font-gothic: 'Cinzel Decorative', serif;
+  --font-nosifer: 'Nosifer', cursive;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-sub: 'Montserrat', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Spacing */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+
+  /* Motion */
+  --t-fast: 180ms;
+  --t-med: 320ms;
+  --t-slow: 700ms;
+  --t-cinema: 1100ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layout */
+  --header-h: 72px;
+  --max-w: 1320px;
+
+  /* Glow */
+  --glow-red: 0 0 24px rgba(209, 15, 47, 0.35);
+  --glow-red-strong: 0 0 40px rgba(209, 15, 47, 0.55);
+  --glow-pumpkin: 0 0 22px rgba(255, 117, 24, 0.4);
+}

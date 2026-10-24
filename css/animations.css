@@ -1,0 +1,55 @@
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  42% { opacity: 0.7; }
+  44% { opacity: 1; }
+  70% { opacity: 0.85; }
+  72% { opacity: 1; }
+}
+@keyframes fogDrift {
+  from { transform: translateX(-5%); }
+  to { transform: translateX(5%); }
+}
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes redPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(209,15,47,0.4); }
+  50% { box-shadow: 0 0 40px 6px rgba(209,15,47,0.55); }
+}
+@keyframes sweep {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+@keyframes glowPulse {
+  0%,100% { text-shadow: 0 0 20px rgba(209,15,47,0.35); }
+  50% { text-shadow: 0 0 40px rgba(209,15,47,0.7); }
+}
+@keyframes ravenFly {
+  0% { transform: translate(-10vw, 20vh) scale(0.6); opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { transform: translate(110vw, -10vh) scale(1); opacity: 0; }
+}
+
+/* Utility classes */
+.anim-fade { animation: fadeIn var(--t-med) var(--ease-out) both; }
+.anim-up { animation: fadeUp var(--t-slow) var(--ease-out) both; }
+.anim-scale { animation: scaleIn var(--t-med) var(--ease-out) both; }
+.flicker { animation: flicker 4s infinite steps(1); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body.reduce-motion *, body.reduce-motion *::before, body.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}

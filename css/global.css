@@ -1,0 +1,59 @@
+html { scroll-behavior: smooth; }
+body {
+  background: var(--midnight);
+  color: var(--ghost);
+  font-family: var(--font-body);
+  font-weight: 400;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(139,0,0,0.10), transparent 45%),
+    radial-gradient(circle at 80% 100%, rgba(109,40,217,0.08), transparent 50%);
+}
+
+/* subtle film grain */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  z-index: 9998;
+  mix-blend-mode: overlay;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb { background: var(--blood); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--crimson); }
+
+/* Headings */
+h1,h2,h3,h4 { font-family: var(--font-gothic); font-weight: 700; letter-spacing: 0.02em; }
+h1 { font-size: clamp(2.2rem, 6vw, 5rem); }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.75rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+p { color: #cfcbd6; max-width: 65ch; }
+
+.section-title {
+  color: var(--ghost);
+  margin-bottom: var(--sp-6);
+  text-shadow: 0 2px 24px rgba(209,15,47,0.35);
+}
+.section-title .accent { color: var(--crimson); }
+
+.container { width: min(100% - 2rem, var(--max-w)); margin-inline: auto; padding-block: var(--sp-12); }
+
+/* Link states */
+a { transition: color var(--t-fast) var(--ease-out); }
+a:hover { color: var(--crimson); }
+
+/* Keyboard hint */
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border: 1px solid var(--fog);
+  border-radius: 4px;
+  color: var(--ghost);
+}
